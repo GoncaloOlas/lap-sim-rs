@@ -1,0 +1,105 @@
+[revision]
+value = 1
+
+[aero]
+cl_profile = 3.54
+cd_profile = 1.03
+roh = 1.225
+area = 0.839
+
+[battery]
+soc_current = 100
+cell_s = 78
+cell_p = 7
+cell_cap = 3
+pack_volts = 441
+
+[cooling]
+air_temp = 1
+system_p_loss = 1
+coolant_temp = 1
+coolant_temp_max = 1
+fan_max_draw = 1
+fan_max_rate = 1
+fan_count = 1
+pump_max_draw = 1
+pump_max_rate = 1
+
+[driveline]
+motor_type = 1
+configuration = 1
+mechanical_efficiency = 1
+gear_ratio = 12
+moment_inertia = 1
+dif_locking_coeff = 1
+chain_tension = 1
+viscous_coef = 1
+max_motor_torque = 300
+
+[driver]
+regen_en = 1
+tc_en = 1
+lc_en = 1
+brake_bal = 1
+
+[hv]
+cable_r = 0.02
+cable_z = 1
+dc_link_cap = 0.05
+dcdc_input_cap = 0.05
+
+[lv]
+lv_voltage = 16
+dcdc_eff = 1
+pump_eff = 1
+batt_fan_eff = 1
+fan_max_draw = 1
+pump_max_draw = 1
+lv_draw = 1.3
+
+[motor]
+lambda_m = 1
+r_s = 1
+max_motor_power = 1
+max_motor_current = 1
+max_torque = 1
+power_limit = 1
+kv = 1
+dc_link_cap = 0.5
+
+[sensors]
+
+[tctv]
+slip_ratio = 1
+tire_angle = 1
+
+[tires]
+fz = 1
+fz_nom = 1
+fx = 1
+fy = 1
+pc_x_mat = 1
+pc_y_mat = 1
+pc_x = 1
+pc_y = 1
+
+[track]
+
+[vd]
+vehicle_mass = 200
+wheel_radius = 0.2286
+cg_x = 1
+cg_y = 1
+cg_z = 1
+wheelbase = 1
+track_front = 1
+track_rear = 1
+tire_coef = 1.5
+num_motor = 4
+
+[suspension]
+ks = 1
+bs = 1
+motion_ratio = 1
+m_unsp = 1
+m_sp = 1

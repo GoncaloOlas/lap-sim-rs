@@ -1,3 +1,6 @@
+mod config_loader;
+
 fn main() {
-    println!("Hello, world!");
+    let settings = config_loader::load_vehicle_config();
+    println!("{:?}", settings);
 }
