@@ -5,7 +5,7 @@ use serde_derive::Deserialize;
 
 // Define a struct that matches the structure of your TOML file
 #[derive(Deserialize, Debug)]
-pub struct Vehicle {
+struct Vehicle {
     revision: Revision,
     aero: Aero,
     battery: Battery,
@@ -150,12 +150,27 @@ struct Suspension{
 }
 
 pub fn load_vehicle_config() -> Vehicle{
-    let mut file = File::open("src/configs/vehicle.toml").expect("Could not open file");
+    let mut file = File::open("src/configs/vehicle.toml").expect("Could not open vehicle.toml file");
     let mut contents = String::new();
-    file.read_to_string(&mut contents).expect("Could not read file");
+    file.read_to_string(&mut contents).expect("Could not read vehicle.toml file");
 
-    let vehicle: Vehicle = toml::from_str(&contents).expect("Could not deserialize TOML");
+    let vehicle: Vehicle = toml::from_str(&contents).expect("Could not deserialize vehicle.toml");
 
-    println!("{:?}", vehicle);
     vehicle
+}
+
+#[derive(Deserialize, Debug)]
+pub struct Simulation{
+    start_sim_time: f64,
+    timestep: f64,
+}
+
+pub fn load_simulation_config() -> Simulation{
+    let mut file = File::open("src/configs/simulation.toml").expect("Could not open simulation.toml file");
+    let mut contents = String::new();
+    file.read_to_string(&mut contents).expect("Could not read simulation.toml file");
+
+    let simulation_config: Simulation = toml::from_str(&contents).expect("Could not deserialize simulation.toml");
+    
+    simulation_config
 }

@@ -17,7 +17,7 @@ The goal is to allow for fast, precise and "easy" future modifications to setup,
 
 - Lap sim with static parameters
 - Lap sim with dynamic interactions
-- GUI for visualization and ease-of-use
+- GUI for visualization and ease-of-use ([tauri](https://tauri.app/))
 
 ## Installation
 

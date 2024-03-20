@@ -1,0 +1,4 @@
+[settings]
+
+start_sim_time = 0
+timestep = 0.1
