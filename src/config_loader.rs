@@ -3,31 +3,31 @@ use std::io::Read;
 use toml;
 use serde_derive::Deserialize;
 
-// Define a struct that matches the structure of your TOML file
+// Define a pub struct that matches the structure of your TOML file
 #[derive(Deserialize, Debug)]
-struct Vehicle {
-    revision: Revision,
-    aero: Aero,
-    battery: Battery,
-    cooling: Cooling,
-    driveline: Driveline,
-    driver: Driver,
-    hv: HV,
-    lv: LV,
-    motor: Motor,
-    tctv: TCTV,
-    tires: Tires,
-    vd: VD,
-    suspension: Suspension,
+pub struct Vehicle {
+    pub revision: Revision,
+    pub aero: Aero,
+    pub battery: Battery,
+    pub cooling: Cooling,
+    pub driveline: Driveline,
+    pub driver: Driver,
+    pub hv: HV,
+    pub lv: LV,
+    pub motor: Motor,
+    pub tctv: TCTV,
+    pub tires: Tires,
+    pub vd: VD,
+    pub suspension: Suspension,
 }
 
 #[derive(Debug, Deserialize)]
-struct Revision {
+pub struct Revision {
     value: u32,
 }
 
 #[derive(Debug, Deserialize)]
-struct Aero {
+pub struct Aero {
     cl_profile: f64,
     cd_profile: f64,
     roh: f64,
@@ -35,7 +35,7 @@ struct Aero {
 }
 
 #[derive(Debug, Deserialize)]
-struct Battery {
+pub struct Battery {
     soc_current: f64,
     cell_s: f64,
     cell_p: f64,
@@ -44,7 +44,7 @@ struct Battery {
 }
 
 #[derive(Debug, Deserialize)]
-struct Cooling{
+pub struct Cooling{
     air_temp: f64,
     system_p_loss: f64,
     coolant_temp: f64,
@@ -57,7 +57,7 @@ struct Cooling{
 }
 
 #[derive(Debug, Deserialize)]
-struct Driveline{
+pub struct Driveline{
     motor_type: f64,
     configuration: f64,
     mechanical_efficiency: f64,
@@ -70,7 +70,7 @@ struct Driveline{
 }
 
 #[derive(Debug, Deserialize)]
-struct Driver{
+pub struct Driver{
     regen_en: f64,
     tc_en: f64,
     lc_en: f64,
@@ -78,7 +78,7 @@ struct Driver{
 }
 
 #[derive(Debug, Deserialize)]
-struct HV{
+pub struct HV{
     cable_r: f64,
     cable_z: f64,
     dc_link_cap: f64,
@@ -86,7 +86,7 @@ struct HV{
 }
 
 #[derive(Debug, Deserialize)]
-struct LV{
+pub struct LV{
     lv_voltage: f64,
     dcdc_eff: f64,
     pump_eff: f64,
@@ -97,7 +97,7 @@ struct LV{
 }
 
 #[derive(Debug, Deserialize)]
-struct Motor{
+pub struct Motor{
     lambda_m: f64,
     r_s: f64,
     max_motor_power: f64,
@@ -109,13 +109,13 @@ struct Motor{
 }
 
 #[derive(Debug, Deserialize)]
-struct TCTV{
+pub struct TCTV{
     slip_ratio: f64,
     tire_angle: f64,
 }
 
 #[derive(Debug, Deserialize)]
-struct Tires{    
+pub struct Tires{    
     fz: f64,
     fz_nom: f64,
     fx: f64,
@@ -127,7 +127,7 @@ struct Tires{
 }
 
 #[derive(Debug, Deserialize)]
-struct VD{
+pub struct VD{
     vehicle_mass: f64,
     wheel_radius: f64,
     cg_x: f64,
@@ -141,7 +141,7 @@ struct VD{
 }
 
 #[derive(Debug, Deserialize)]
-struct Suspension{
+pub struct Suspension{
     ks: f64,
     bs: f64,
     motion_ratio: f64,

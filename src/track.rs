@@ -4,8 +4,8 @@ use std::path::Path;
 
 #[derive(Debug)]
 pub struct Track {
-    raw_track: Vec<Vec<f64>>, // Assuming the raw_track is a 2D vector of f64
-    elements: usize,
+    pub raw_track: Vec<Vec<f64>>, // Assuming the raw_track is a 2D vector of f64
+    pub elements: usize,
 }
 
 impl Track {
